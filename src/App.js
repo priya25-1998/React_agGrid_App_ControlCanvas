@@ -5,10 +5,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { useState, useEffect, useMemo } from "react";
 import "ag-grid-enterprise";
-import { LicenseManager } from "ag-grid-enterprise";
-LicenseManager.setLicenseKey(
-  "MTY4ODA3OTYwMDAwMA==5266e2b19455d0b5c7c8c52bf6367755"
-);
+
 
 
 
@@ -25,11 +22,11 @@ function App() {
 
   const [columnDefs] = useState([
     {
-      field: "Control ID",
-      headerName: "Control ID",
+      field: "title",
+      headerName: "title",
       chartDataType: "category",
       filter: true,
-      tooltipField: "Control ID",
+      tooltipField: "title",
       headerCheckboxSelection: true,
       enableRowGroup: true,
       checkboxSelection: true,
@@ -38,10 +35,10 @@ function App() {
       enableValue: true,
       //aggFunc: 'count'
     },
-    {
-      field: "Control Name",
-      headerName: "Control Name",
-      tooltipField: "Control Name",
+	{
+      field: "worldwide gross (m)",
+      headerName: "worldwide gross (m)",
+      tooltipField: "worldwide gross (m)",
       chartDataType: "category",
       filter: true,
       enableRowGroup: true,
@@ -50,9 +47,9 @@ function App() {
       //aggFunc: 'count'
     },
     {
-      field: "Control Description",
-      headerName: "Control Description",
-      tooltipField: "Control Description",
+      field: "% budget recovered",
+      headerName: "% budget recovered",
+      tooltipField: "% budget recovered",
       chartDataType: "category",
       filter: true,
       enableRowGroup: true,
@@ -60,54 +57,189 @@ function App() {
       enableValue: true,
       //aggFunc: 'count'
     },
-
-    {
-      field: "Insight",
-      headerName: "Insight",
+{
+      field: "X times budget recovered",
+      headerName: "X times budget recovered",
+      tooltipField: "X times budget recovered",
       chartDataType: "category",
       filter: true,
-      tooltipField: "Insight",
       enableRowGroup: true,
       enablePivot: true,
       enableValue: true,
       //aggFunc: 'count'
     },
     {
-      field: "Tested LoB",
-      headerName: "Tested LoB",
+      field: "budget  (millions)",
+      headerName: "budget  (millions)",
+      tooltipField: "budget  (millions)",
       chartDataType: "category",
-      filter: "agSetColumnFilter",
-      tooltipField: "Tested LoB",
+      filter: true,
       enableRowGroup: true,
       enablePivot: true,
       enableValue: true,
       //aggFunc: 'count'
     },
     {
-      field: "Total Test Count",
-      headerName: "Total Test Count",
-      chartDataType: "series",
-      tooltipField: "Total Test Count",
+      field: "domestic gross (m)",
+      headerName: "domestic gross (m)",
+      tooltipField: "domestic gross (m)",
+      chartDataType: "category",
+      filter: true,
       enableRowGroup: true,
       enablePivot: true,
       enableValue: true,
       //aggFunc: 'count'
     },
     {
-      field: "Duplicate/Similar Count",
-      headerName: "Duplicate/Similar Count",
-      chartDataType: "series",
-      tooltipField: "Duplicate/Similar Count",
+      field: "domestic %",
+      headerName: "domestic %",
+      tooltipField: "domestic %",
+      chartDataType: "category",
+      filter: true,
       enableRowGroup: true,
       enablePivot: true,
       enableValue: true,
       //aggFunc: 'count'
     },
+    {
+      field: "international gross (m)",
+      headerName: "international gross (m)",
+      tooltipField: "international gross (m)",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "% of gross from international",
+      headerName: "% of gross from international",
+      tooltipField: "% of gross from international",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "worldwide gross",
+      headerName: "worldwide gross",
+      tooltipField: "worldwide gross",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "worldwide gross (m)",
+      headerName: "worldwide gross (m)",
+      tooltipField: "worldwide gross (m)",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "year",
+      headerName: "year",
+      tooltipField: "year",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "decade",
+      headerName: "decade",
+      tooltipField: "decade",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "source",
+      headerName: "source",
+      tooltipField: "source",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "budget source",
+      headerName: "budget source",
+      tooltipField: "budget source",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "force label",
+      headerName: "force label",
+      tooltipField: "force label",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "horror",
+      headerName: "horror",
+      tooltipField: "horror",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "genre",
+      headerName: "genre",
+      tooltipField: "genre",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+    {
+      field: "collection",
+      headerName: "collection",
+      tooltipField: "collection",
+      chartDataType: "category",
+      filter: true,
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true,
+      //aggFunc: 'count'
+    },
+       
+    
   ]);
 
   useEffect(() => {
     const object_URL =
-      "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/Duplicate_controls_within_same_Lob.csv";
+      "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/Most+Profitable+Movies+of+All+Time+-+Top+500+Movies.csv";
     fetch(object_URL)
       .then((response) => response.text())
       .then((csvData) => {
@@ -197,7 +329,7 @@ function App() {
       className="ag-theme-alpine"
       style={{ height: 500, width: 1350 }}
     >
-      <h2>Duplicate Controls within Same LOB</h2>
+      <h2>MOVIES DATA</h2>
       <AgGridReact
         rowData={rowData}
         columnDefs={columnDefs}
