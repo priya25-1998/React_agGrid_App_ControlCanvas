@@ -267,6 +267,8 @@ function App() {
 
   // Define the Default columns Parameters
 
+  
+
   const defaultColDef = useMemo(() => {
     return {
       sortable: true,
@@ -350,6 +352,8 @@ function App() {
       />
     </div>
   );
+
+  
 }
 
 export default App;
