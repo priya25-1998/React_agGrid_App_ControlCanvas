@@ -239,7 +239,7 @@ function App() {
 
   useEffect(() => {
     const object_URL =
-      "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/Most+Profitable+Movies+of+All+Time+-+Top+500+Movies.csv";
+      "https://ms-optimizer-mumbai.s3.ap-south-1.amazonaws.com/Most+Profitable+Movies+of+All+Time+-+Top+500+Movies.csv";
     fetch(object_URL)
       .then((response) => response.text())
       .then((csvData) => {
